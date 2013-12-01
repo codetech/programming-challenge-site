@@ -4,7 +4,7 @@ programming-challenge-site
 A mock programming challenge site. A [PHP] club project.
 
 
-More info
+More Info
 =========
 
 To get details on the project visit this page:
