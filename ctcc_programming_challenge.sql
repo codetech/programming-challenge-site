@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 01, 2013 at 04:04 AM
+-- Generation Time: Dec 01, 2013 at 05:00 PM
 -- Server version: 5.5.31-0+wheezy1
 -- PHP Version: 5.4.4-14+deb7u5
 
@@ -36,36 +36,22 @@ CREATE TABLE IF NOT EXISTS `challenges` (
   `winning_submission` int(10) unsigned NOT NULL,
   `submissions` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `challenges`
 --
 
 INSERT INTO `challenges` (`id`, `date`, `name`, `description`, `winning_submission`, `submissions`) VALUES
-(1, '0000-00-00 00:00:00', 'My Challenge', 'A challenge.', 4, '5,7,8,9'),
-(2, '0000-00-00 00:00:00', 'dfsdf', 'A challenge.', 4, '5,7,8,9'),
-(3, '0000-00-00 00:00:00', 'dfsdf', 'A challenge.', 4, '5,7,8,9'),
-(4, '0000-00-00 00:00:00', 'dfsdf', 'A challenge.', 4, '5,7,8,9'),
-(5, '0000-00-00 00:00:00', 'dfsdf', 'A challenge.', 4, '5,7,8,9'),
-(6, '0000-00-00 00:00:00', 'dfsdf', 'A challenge.', 4, '5,7,8,9'),
-(7, '0000-00-00 00:00:00', 'test', 'A challenge.', 4, '5,7,8,9'),
-(8, '0000-00-00 00:00:00', 'test 2', 'A challenge.', 4, '5,7,8,9'),
-(9, '0000-00-00 00:00:00', 'test 3', 'A challenge.', 4, '5,7,8,9'),
-(10, '2013-12-01 00:00:00', 'Coolio', 'A challenge.', 4, '5,7,8,9'),
-(11, '2013-12-01 00:00:00', 'Smoolio', 'A challenge.', 4, '5,7,8,9'),
-(12, '2013-12-01 02:54:56', 'Smoolio 3', 'A challenge.', 4, '5,7,8,9'),
-(13, '2013-12-01 02:55:59', 'Smoolio 4', 'A challenge.', 4, '5,7,8,9'),
-(14, '2013-12-01 02:56:20', 'Smoolio 5', 'A challenge.', 4, '5,7,8,9'),
-(15, '2013-12-01 03:43:32', 'Last Test', 'A challenge.', 4, '5,7,8,9');
+(1, '2013-12-01 16:47:57', 'Challenge Uno', 'A challenge.', 1, '1,2');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `challenge_submissions`
+-- Table structure for table `submissions`
 --
 
-CREATE TABLE IF NOT EXISTS `challenge_submissions` (
+CREATE TABLE IF NOT EXISTS `submissions` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `challenge_id` int(10) unsigned NOT NULL,
   `date` datetime NOT NULL,
@@ -74,18 +60,19 @@ CREATE TABLE IF NOT EXISTS `challenge_submissions` (
   `author` varchar(255) NOT NULL,
   `repository` varchar(255) NOT NULL,
   `license` varchar(255) NOT NULL,
+  `grades` text NOT NULL,
+  `winner` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `challenge_submissions`
+-- Dumping data for table `submissions`
 --
 
-INSERT INTO `challenge_submissions` (`id`, `challenge_id`, `date`, `title`, `description`, `author`, `repository`, `license`) VALUES
-(1, 1, '2013-12-01 03:34:41', 'Chal Sub 1', 'A challenge submission.', 'Smitty', 'https://github.com/jquery/jquery.git', 'mit'),
-(2, 1, '2013-12-01 03:37:16', 'Chal Sub 3', 'A challenge submission.', 'Smitty', 'https://github.com/jquery/jquery.git', 'mit'),
-(3, 1, '2013-12-01 03:38:53', 'Chal Sub 6', 'A challenge submission.', 'Smitty', 'https://github.com/jquery/jquery.git', 'mit'),
-(4, 1, '2013-12-01 03:44:10', 'Last Chal Sub', 'A challenge submission.', 'Smitty', 'https://github.com/jquery/jquery.git', 'mit');
+INSERT INTO `submissions` (`id`, `challenge_id`, `date`, `title`, `description`, `author`, `repository`, `license`, `grades`, `winner`) VALUES
+(1, 1, '2013-12-01 16:56:08', 'Submission Uno', 'A submission.', 'Smitty', 'https://github.com/jquery/jquery.git', 'mit', '30,32', 1),
+(2, 1, '2013-12-01 16:56:32', 'Submission Dos', 'A submission.', 'Smitty', 'https://github.com/jquery/jquery.git', 'mit', '15,13', 0),
+(3, 1, '2013-12-01 16:58:21', 'Submission Tres', 'A submission.', 'Smitty', 'https://github.com/jquery/jquery.git', 'mit', '24,25', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,7 +1,7 @@
 <?php
 /*
- * All objects which can be saved-to and loaded-from a database should implement
- * this interface's methods.
+ * All objects which can be saved-to and loaded-from a database should
+ * implement this interface.
  */
 interface DatabaseObject
 {
